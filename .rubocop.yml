@@ -1,0 +1,30 @@
+require:
+  - rubocop-performance
+
+AllCops:
+  NewCops: enable
+  SuggestExtensions: false
+  TargetRubyVersion: 2.5
+
+Layout/DotPosition:
+  EnforcedStyle: trailing
+
+Layout/ExtraSpacing:
+  Enabled: false
+
+Layout/LineLength:
+  Max: 120
+
+Layout/SpaceAroundOperators:
+  Enabled: false
+
+Metrics/BlockLength:
+  Max: 50
+
+Metrics/MethodLength:
+  Max: 25
+
+Naming/MethodParameterName:
+  Enabled: true
+  Exclude:
+    - 'lib/doger/geometry/point.rb'
