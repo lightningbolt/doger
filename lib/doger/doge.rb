@@ -142,7 +142,7 @@ module Doger
     def random_unused_color(point)
       nearby_text_regions =
         @occupied_text_regions.find_all do |occupied_text_region|
-          point.distance_to(occupied_text_region.center) <= (@image_diagonal_size / 4.0)
+          point.distance_to(occupied_text_region.center) <= (@image_diagonal_size / 2.5)
         end
       nearby_colors = nearby_text_regions.map(&:color)
       # don't check for @used_colors after all colors have been used
