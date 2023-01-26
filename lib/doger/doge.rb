@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
-require 'core_ext/kernel/random_from'
-require 'core_ext/range/weighted_array'
+require 'core_ext/range'
 require 'doger/color'
 require 'doger/geometry'
 require 'doger/text_region'
@@ -99,7 +98,7 @@ module Doger
       text_options = {}
       loop do
         text_options[:random_point] = zone.random_point
-        text_options[:pointsize] = random_from(@pointsizes)
+        text_options[:pointsize] = @pointsizes.sample
         text_options[:color] = random_unused_color(text_options[:random_point])
         # determine height and width of text
         text_height = (text_options[:pointsize] * 1.25).ceil

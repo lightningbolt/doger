@@ -18,11 +18,11 @@ module Doger
 
     def random_point
       if coordinate_choices
-        Doger::Geometry::Point.new(*random_from(coordinate_choices))
+        Doger::Geometry::Point.new(*coordinate_choices.sample)
       else
         Doger::Geometry::Point.new(
-          random_from(x_choices),
-          random_from(y_choices)
+          x_choices.sample,
+          y_choices.sample
         )
       end
     end
